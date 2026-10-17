@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Graph · Samarth Reddy, Creative Technologist</title>
+  <meta name="description" content="An interactive graph of Samarth Reddy's portfolio: projects grouped by section and linked through the themes they share.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="pg" id="project-graph" aria-label="Interactive project graph">
+    <header class="pg-toolbar">
+      <a class="pg-brand" href="https://portfolio-5208db.webflow.io/" title="Back to portfolio">✱ Sam<span>/ graph</span></a>
+
+      <div class="pg-search">
+        <svg class="pg-search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="20" y1="20" x2="16.2" y2="16.2"></line></svg>
+        <input type="search" id="pg-search-input" placeholder="Find a project or theme" autocomplete="off" spellcheck="false"
+               role="combobox" aria-expanded="false" aria-controls="pg-suggestions" aria-autocomplete="list" aria-label="Find a project or theme">
+        <kbd class="pg-kbd" aria-hidden="true">/</kbd>
+        <ul id="pg-suggestions" class="pg-suggestions" role="listbox" hidden></ul>
+      </div>
+
+      <p class="pg-stats" id="pg-stats"></p>
+
+      <label class="pg-toggle" title="Show or hide theme hubs (T)">
+        <input type="checkbox" id="pg-toggle-themes" checked>
+        <span>Themes</span>
+      </label>
+      <button type="button" class="pg-btn" id="pg-theme-btn" title="Toggle light / dark" aria-label="Toggle light or dark mode">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+      </button>
+    </header>
+
+    <div class="pg-stage" id="pg-stage">
+      <div id="pg-canvas" class="pg-canvas"></div>
+      <div id="pg-tooltip" class="pg-tooltip" aria-hidden="true"></div>
+
+      <div class="pg-zoom" role="group" aria-label="Zoom controls">
+        <button type="button" class="pg-btn" id="pg-zoom-in" title="Zoom in (+)" aria-label="Zoom in">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </button>
+        <button type="button" class="pg-btn" id="pg-zoom-out" title="Zoom out (−)" aria-label="Zoom out">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </button>
+        <button type="button" class="pg-btn" id="pg-zoom-fit" title="Fit to view (0)" aria-label="Fit graph to view">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9V5a1 1 0 0 1 1-1h4"></path><path d="M15 4h4a1 1 0 0 1 1 1v4"></path><path d="M20 15v4a1 1 0 0 1-1 1h-4"></path><path d="M9 20H5a1 1 0 0 1-1-1v-4"></path><circle cx="12" cy="12" r="2.5"></circle></svg>
+        </button>
+      </div>
+
+      <aside id="pg-panel" class="pg-panel" aria-live="polite" hidden>
+        <div class="pg-panel-cover" id="pg-panel-cover" hidden></div>
+        <div class="pg-panel-head">
+          <span class="pg-panel-dot" id="pg-panel-dot"></span>
+          <div class="pg-panel-titles">
+            <h2 class="pg-panel-title" id="pg-panel-title"></h2>
+            <p class="pg-panel-meta" id="pg-panel-meta"></p>
+          </div>
+          <button type="button" class="pg-btn" id="pg-panel-close" aria-label="Close" title="Close (Esc)">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
+          </button>
+        </div>
+        <div class="pg-panel-body">
+          <p class="pg-panel-desc" id="pg-panel-desc"></p>
+          <a class="pg-open" id="pg-panel-open" target="_blank" rel="noopener" hidden>Open project <span aria-hidden="true">↗</span></a>
+          <h3 class="pg-panel-label" id="pg-themes-label">Themes</h3>
+          <div class="pg-chips" id="pg-panel-themes"></div>
+          <h3 class="pg-panel-label" id="pg-projects-label">Projects</h3>
+          <ol class="pg-list" id="pg-panel-projects"></ol>
+        </div>
+      </aside>
+
+      <div id="pg-hint" class="pg-hint" aria-hidden="true"></div>
+    </div>
+
+    <footer class="pg-footer">
+      <div class="pg-legend" id="pg-legend" role="group" aria-label="Portfolio sections"></div>
+      <p class="pg-help" id="pg-help"></p>
+    </footer>
+  </main>
+
+  <noscript><p style="padding:2rem">The project graph needs JavaScript.</p></noscript>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <script src="data/projects.js"></script>
+  <script src="graph.js"></script>
+</body>
+</html>
