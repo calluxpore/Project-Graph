@@ -11,13 +11,13 @@
   // ---------------------------------------------------------------------
   const THEME_RULES = {
     'Memory':            /memory|mind palace|temporal|chronotope|mirror|atlas|remember/i,
-    'Generative AI':     /lora|diffusion|controlnet|generative|noise|gridphoto|gemma|fine-tun|persona|ai[- ]driven|npc/i,
-    'Computer Vision':   /vision|caption|webcam|blip|face|yolo|visual|llava|semiotic|sorter/i,
-    'Sound & Audio':     /sound|audio|acoustic|birdsong|reverb|bioacoustic/i,
+    'Generative AI':     /lora|diffusion|controlnet|generative ai|3d generation|noise|gridphoto|gemma|fine-tun|persona|ai[- ]driven|npc/i,
+    'Computer Vision':   /vision|caption|webcam|blip|face|yolo|visual (analysis|triage)|llava|semiotic|sorter/i,
+    'Sound & Audio':     /sound|audio|acoustic|birdsong|reverb|bioacoustic|detox/i,
     '3D & Spatial':      /3d|spatial|\bxr\b|\bvr\b|\bar\b|morpholog|architecture|pontoon|modelling/i,
     'Accessibility':     /accessib|disab|blind|adhd|prosthe|assistive|special children|patient|inclusive/i,
-    'Interactive Art':   /interactive|kinetic|installation|puppet|lighting|couture|compute\.\s*(art|play)|arduino/i,
-    'Parametric Design': /parametric|algorithmic|node param|bio-morph|biomimicry|generative 3d/i,
+    'Interactive Art':   /interactive|kinetic|installation|puppet|lighting|couture|compute\.\s*(art|play|detox)|arduino/i,
+    'Parametric Design': /parametric|algorithmic|node param|bio-morph|biomimicry|generative 3d|generative reverb/i,
     'Speculative':       /speculative|mythos|fictional|sci-fi|xeno|character|alter-ego|concept|skims/i,
     'Tools & Apps':      /studio|\bapp\b|tracker|quiz|reader|generator|filing|sorter|stopwatch|rsvp|dataset|gridphoto/i,
     'Industrial Design': /industrial|sketch|equipment|furniture|kara|artemis|budding|prosthe|flood|water|couture/i,
@@ -53,6 +53,9 @@
   // Projects that matched only dropped themes keep working; recompute their live theme list.
   const themeIds = new Set(nodes.filter(n => n.type === 'theme').map(n => n.label));
   nodes.filter(n => n.type === 'project').forEach(n => { n.themes = n.themes.filter(t => themeIds.has(t)); });
+  // New projects scraped from the site may match no rule; they'd float unlinked, so flag them.
+  const untagged = nodes.filter(n => n.type === 'project' && !n.themes.length).map(n => n.label);
+  if (untagged.length) console.warn('[project-graph] No theme matched, add a THEME_RULES keyword:', untagged);
 
   const neighbors = new Map(nodes.map(n => [n.id, new Set()]));
   links.forEach(l => { neighbors.get(l.source).add(l.target); neighbors.get(l.target).add(l.source); });
@@ -95,7 +98,7 @@
   // ---------------------------------------------------------------------
   const $ = id => document.getElementById(id);
   const root = $('project-graph'), canvas = $('pg-canvas'), stage = $('pg-stage');
-  const tooltip = $('pg-tooltip'), hint = $('pg-hint'), panel = $('pg-panel');
+  const tooltip = $('pg-tooltip'), panel = $('pg-panel');
   const searchInput = $('pg-search-input'), suggestions = $('pg-suggestions'), legendEl = $('pg-legend');
   const themesToggle = $('pg-toggle-themes');
 
@@ -111,14 +114,11 @@
     ? 'Tap a node for details · Drag to move · Pinch to zoom'
     : 'Click a node for details · Drag to pan · Scroll to zoom · Esc to close';
 
-  // dark / light
-  const saved = localStorage.getItem('pg-theme');
-  if (saved) document.documentElement.dataset.theme = saved;
-  else if (matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.dataset.theme = 'dark';
+  // dark / light (initial theme is set by the inline script in <head> to avoid a flash)
   $('pg-theme-btn').addEventListener('click', () => {
     const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
     document.documentElement.dataset.theme = next;
-    localStorage.setItem('pg-theme', next);
+    try { localStorage.setItem('pg-theme', next); } catch (e) { /* storage blocked, e.g. in a sandboxed iframe */ }
   });
 
   const svg = d3.select(canvas).append('svg')
@@ -128,7 +128,8 @@
 
   const linkSel = viewport.append('g').attr('aria-hidden', 'true')
     .selectAll('line').data(links).join('line')
-    .attr('class', 'pg-link').attr('stroke-width', 1.2);
+    .attr('class', 'pg-link').attr('stroke-width', 1.2)
+    .style('--link-color', l => (l.source.type === 'project' ? l.source : l.target).color);
 
   const nodeSel = viewport.append('g').selectAll('g')
     .data([...nodes].sort((a, b) => (a.type === 'theme') - (b.type === 'theme')))
@@ -159,11 +160,7 @@
   // ---------------------------------------------------------------------
   // 4. Zoom & pan
   // ---------------------------------------------------------------------
-  let userMoved = false, hintTimer = null;
-  const flash = text => {
-    hint.textContent = text; hint.classList.add('is-visible');
-    clearTimeout(hintTimer); hintTimer = setTimeout(() => hint.classList.remove('is-visible'), 1600);
-  };
+  let userMoved = false;
 
   const zoom = d3.zoom().scaleExtent([0.2, 4])
     .filter(e => (e.type === 'wheel' ? true : !e.button))
@@ -192,6 +189,8 @@
     return d3.zoomIdentity.translate(a.w / 2 - k * (x0 + bw / 2), a.h / 2 - k * (y0 + bh / 2)).scale(k);
   }
   function fitView(animate = true, subset) {
+    // Not laid out yet (e.g. a hidden iframe); the ResizeObserver fits once it has a size.
+    if (!stage.clientWidth || !stage.clientHeight) return;
     const t = fitTransform(subset);
     (animate ? svg.transition().duration(ms(600)).ease(d3.easeCubicInOut) : svg).call(zoom.transform, t);
   }
@@ -254,10 +253,6 @@
         if (anyMatch) return true;
         if (state.section) return l.source.section !== state.section;
         return false;
-      })
-      .style('--link-color', l => {
-        const p = l.source.type === 'project' ? l.source : l.target;
-        return p.color;
       });
   }
 
@@ -275,6 +270,15 @@
     tooltip.classList.add('is-visible');
   }
   function hideTooltip() { tooltip.classList.remove('is-visible'); }
+
+  // Warm the cache on hover so the panel cover is ready by the time the node is clicked.
+  const prefetched = new Set();
+  function prefetchCover(n) {
+    const src = n.data && n.data.image;
+    if (!src || prefetched.has(src)) return;
+    prefetched.add(src);
+    new Image().src = src;
+  }
 
   // ---------------------------------------------------------------------
   // 7. Panel & selection
@@ -375,10 +379,10 @@
   // ---------------------------------------------------------------------
   let dragging = false;
   nodeSel
-    .on('pointerenter', (e, n) => { if (dragging || e.pointerType === 'touch') return; state.hovered = n; applyState(); showTooltip(n); })
+    .on('pointerenter', (e, n) => { if (dragging || e.pointerType === 'touch') return; state.hovered = n; applyState(); showTooltip(n); prefetchCover(n); })
     .on('pointerleave', () => { if (dragging) return; state.hovered = null; applyState(); hideTooltip(); })
     .on('click', (e, n) => { e.stopPropagation(); hideTooltip(); select(state.selected === n ? null : n); })
-    .on('focus', (e, n) => { state.hovered = n; applyState(); showTooltip(n); })
+    .on('focus', (e, n) => { state.hovered = n; applyState(); showTooltip(n); prefetchCover(n); })
     .on('blur', () => { state.hovered = null; applyState(); hideTooltip(); })
     .on('keydown', (e, n) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(n); } });
 

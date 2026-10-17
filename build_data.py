@@ -27,6 +27,22 @@ clean = lambda t: html.unescape(re.sub(r"<[^>]+>", "", t)).strip()
 # drop the leading emoji / symbols from section titles
 clean_title = lambda t: re.sub(r"^[^A-Za-z0-9]+", "", clean(t))
 absolute = lambda h: h if h.startswith("http") else BASE + h
+
+# The panel cover is ~340px wide, so ~680px covers 2x screens. Webflow's srcset has
+# -p-500 / -p-800 variants that are a fraction of the original's size.
+COVER_W = 680
+
+
+def cover(img_tag):
+    srcset = re.search(r'srcset="([^"]+)"', img_tag)
+    if srcset:
+        cands = sorted((int(w), html.unescape(u)) for u, w in re.findall(r"(\S+)\s+(\d+)w", srcset.group(1)))
+        if cands:
+            return next((u for w, u in cands if w >= COVER_W), cands[-1][1])
+    src = re.search(r'src="([^"]+)"', img_tag)
+    return html.unescape(src.group(1)) if src else ""
+
+
 projects = []
 for (a, sid), (b, _) in zip(starts, starts[1:]):
     chunk = page[a:b]
@@ -41,7 +57,7 @@ for (a, sid), (b, _) in zip(starts, starts[1:]):
         name = re.search(r'class="project-name">(.*?)</h3>', item, re.S)
         year = re.search(r'black-40">(\d{4})<', item)
         tag = re.search(r'class="project-tag">(.*?)</h4>', item, re.S)
-        img = re.search(r'<img[^>]*?src="([^"]+)"', item)
+        img = re.search(r"<img[^>]*>", item)
         alt = re.search(r'<img[^>]*?alt="([^"]*)"', item)
         if not (href and name):
             continue
@@ -54,7 +70,7 @@ for (a, sid), (b, _) in zip(starts, starts[1:]):
             "year": year.group(1) if year else "",
             "tagline": tagline,
             "section": section,
-            "image": img.group(1) if img else "",
+            "image": cover(img.group(0)) if img else "",
         })
 
 

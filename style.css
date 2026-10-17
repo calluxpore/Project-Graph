@@ -148,13 +148,6 @@ h1, h2, h3, p, ol { margin: 0; }
 .pg-zoom .pg-btn { min-width: 2rem; height: 2rem; }
 .pg.has-panel .pg-zoom { right: calc(var(--panel-w) + 1.7rem); }
 
-.pg-hint {
-  position: absolute; left: 50%; top: .85rem; transform: translate(-50%, -6px);
-  padding: .4rem .8rem; border-radius: 999px; background: var(--text); color: var(--bg);
-  font-size: .78rem; pointer-events: none; opacity: 0; transition: opacity .2s, transform .2s; z-index: 5;
-}
-.pg-hint.is-visible { opacity: .92; transform: translate(-50%, 0); }
-
 /* ---------- Panel ---------- */
 .pg-panel {
   position: absolute; top: .85rem; right: .85rem; bottom: .85rem; width: var(--panel-w);
