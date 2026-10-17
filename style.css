@@ -167,6 +167,8 @@ h1, h2, h3, p, ol { margin: 0; }
 .pg-panel-body { flex: 1; overflow-y: auto; padding: .8rem 1rem 1rem; overscroll-behavior: contain; }
 .pg-panel-desc { font-size: .92rem; color: var(--text); }
 .pg-panel-desc:empty { display: none; }
+.pg-panel-tech { font-family: var(--font-mono); font-size: .74rem; color: var(--text); }
+.pg-panel-tech:empty { display: none; }
 
 .pg-open {
   display: inline-flex; align-items: center; gap: .4rem; margin-top: .8rem; padding: .5rem .9rem;

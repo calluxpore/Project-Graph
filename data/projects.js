@@ -5,7 +5,12 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "tagline": "AI-Based AR Memory App",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f81a1a9cdd39d5ce684ae_01%20Mindpalace%20XR-p-800.png"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f81a1a9cdd39d5ce684ae_01%20Mindpalace%20XR-p-800.png",
+    "tech": [
+      "LLM",
+      "Image generation",
+      "Text-to-3D"
+    ]
   },
   {
     "title": "GridPhoto",
@@ -13,7 +18,10 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "tagline": "High-density visual triage for LoRA training runs.",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6ac4f8082b94a76437b8d1e4_Futuristic%20Holographic%20Art%20Gallery-p-800.png"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6ac4f8082b94a76437b8d1e4_Futuristic%20Holographic%20Art%20Gallery-p-800.png",
+    "tech": [
+      "LoRA"
+    ]
   },
   {
     "title": "Control Map Studio",
@@ -21,7 +29,12 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "tagline": "AI assisted app for ControlNet pipeline",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6ab0b7f5567046034b1c8b0a_controlstudiomap_cover-p-800.png"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6ab0b7f5567046034b1c8b0a_controlstudiomap_cover-p-800.png",
+    "tech": [
+      "Stable Diffusion",
+      "ControlNet",
+      "ComfyUI"
+    ]
   },
   {
     "title": "LoRA Dataset Studio",
@@ -29,7 +42,12 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "tagline": "AI assisted app for Pre LoRA training",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6aad3a58944d3471151abc24_Lorastudio-p-800.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6aad3a58944d3471151abc24_Lorastudio-p-800.jpeg",
+    "tech": [
+      "Vision-language model",
+      "Ollama",
+      "LoRA"
+    ]
   },
   {
     "title": "Birdsong Canvas",
@@ -37,7 +55,12 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "tagline": "Generative AI, Bioacoustics",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6aaa8b2ee506b09b4b89c042_Gemini_Generated_Image_ldlhsildlhsildlh-p-800.jpg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6aaa8b2ee506b09b4b89c042_Gemini_Generated_Image_ldlhsildlhsildlh-p-800.jpg",
+    "tech": [
+      "LLM",
+      "Stable Diffusion",
+      "Image generation"
+    ]
   },
   {
     "title": "Echo-Gnosis",
@@ -45,7 +68,14 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "tagline": "AI Assisted Spatial Accessibility",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6a46022ed769ae7cb45851e2_eg_cOVER-p-800.jpg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6a46022ed769ae7cb45851e2_eg_cOVER-p-800.jpg",
+    "tech": [
+      "LLM",
+      "Vision-language model",
+      "Ollama",
+      "Text-to-speech",
+      "OpenCV"
+    ]
   },
   {
     "title": "Acoustic Chronotope",
@@ -53,7 +83,13 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "tagline": "Spatial Audio Memory Soundscapes",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6a4489740458b6d5a69b7a65_Cover_AC1-p-800.jpg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6a4489740458b6d5a69b7a65_Cover_AC1-p-800.jpg",
+    "tech": [
+      "LLM",
+      "Vision-language model",
+      "Ollama",
+      "Audio generation"
+    ]
   },
   {
     "title": "Memory Mirror",
@@ -61,7 +97,10 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "tagline": "Face Blindness, Remembered",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/69ec63ef10ee4a6ef969a433_Cover_Memory%20Mirror-p-800.jpg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/69ec63ef10ee4a6ef969a433_Cover_Memory%20Mirror-p-800.jpg",
+    "tech": [
+      "Face recognition"
+    ]
   },
   {
     "title": "Toronto Broski - Gemma-4",
@@ -69,7 +108,12 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "tagline": "Persona Fine-tuning, Dialect AI",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/69dc64a0c36a6445a05bedd9_Broski_Cover%20Green-p-800.jpg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/69dc64a0c36a6445a05bedd9_Broski_Cover%20Green-p-800.jpg",
+    "tech": [
+      "LLM",
+      "Ollama",
+      "LoRA"
+    ]
   },
   {
     "title": "MapleTax✨",
@@ -77,7 +121,10 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "tagline": "Smart filing, simplified by AI.",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/69d5e196104681f897bdf4dc_Mpletx_cover-p-800.png"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/69d5e196104681f897bdf4dc_Mpletx_cover-p-800.png",
+    "tech": [
+      "LLM"
+    ]
   },
   {
     "title": "Temporal Self",
@@ -85,7 +132,10 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "tagline": "A Memory Atlas Project",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/69c755620fc0b0aec19dcfd8_Temporal%20Self_Cover-p-800.png"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/69c755620fc0b0aec19dcfd8_Temporal%20Self_Cover-p-800.png",
+    "tech": [
+      "LLM"
+    ]
   },
   {
     "title": "Face-Based Image Sorter",
@@ -93,7 +143,12 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2026",
     "tagline": "Machine Learning / Computer Vision / Data Engineering",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/69898c7e3ca898267838e65a_project%20cover%2016-p-800.png"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/69898c7e3ca898267838e65a_project%20cover%2016-p-800.png",
+    "tech": [
+      "ControlNet",
+      "LoRA",
+      "Face recognition"
+    ]
   },
   {
     "title": "OMAFA: AI & XR Evaluation",
@@ -101,7 +156,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2025",
     "tagline": "Govt of Canada Project",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6956045da8d235ce11c9f09b_MAFA-p-800.jpg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6956045da8d235ce11c9f09b_MAFA-p-800.jpg",
+    "tech": []
   },
   {
     "title": "Computational Semiotics",
@@ -109,7 +165,10 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2025",
     "tagline": "AI-Based Visual Analysis",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/68e94cd216aa6194ba22a327_Cmp%20sem14-p-800.jpg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/68e94cd216aa6194ba22a327_Cmp%20sem14-p-800.jpg",
+    "tech": [
+      "LLM"
+    ]
   },
   {
     "title": "Real-Time Webcam Captioning with LLaVA, Phi-3",
@@ -117,7 +176,13 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2025",
     "tagline": "Real-Time Caption",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/682371edf7211ff12745c887_webcover1-p-800.jpg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/682371edf7211ff12745c887_webcover1-p-800.jpg",
+    "tech": [
+      "LLM",
+      "Vision-language model",
+      "Ollama",
+      "OpenCV"
+    ]
   },
   {
     "title": "From Noise to Art",
@@ -125,7 +190,14 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2025",
     "tagline": "AI LoRA Training",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6810238a4de5a74b06b4699f_02%20From%20Noise%20to%20Art-p-800.png"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6810238a4de5a74b06b4699f_02%20From%20Noise%20to%20Art-p-800.png",
+    "tech": [
+      "Stable Diffusion",
+      "FLUX",
+      "Midjourney",
+      "ComfyUI",
+      "LoRA"
+    ]
   },
   {
     "title": "Yolo Diffusion",
@@ -133,7 +205,12 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2025",
     "tagline": "YOLO Model Training",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f818f0e62056750a91735_03%20Yolo%20Diffusion-p-800.png"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f818f0e62056750a91735_03%20Yolo%20Diffusion-p-800.png",
+    "tech": [
+      "FLUX",
+      "ComfyUI",
+      "YOLO"
+    ]
   },
   {
     "title": "ControlNet",
@@ -141,7 +218,12 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2025",
     "tagline": "Structural Guidance",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f81bde7b94da4c2ed976d_04%20ControlNet-p-800.png"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f81bde7b94da4c2ed976d_04%20ControlNet-p-800.png",
+    "tech": [
+      "ControlNet",
+      "ComfyUI",
+      "Image generation"
+    ]
   },
   {
     "title": "Text to 3D Model",
@@ -149,7 +231,10 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2025",
     "tagline": "3D Generation AI",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee8f77a9f7af1124150d_6782cd13cc6bd051aec14c8a_3dtext.png"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee8f77a9f7af1124150d_6782cd13cc6bd051aec14c8a_3dtext.png",
+    "tech": [
+      "Text-to-3D"
+    ]
   },
   {
     "title": "◉–◉ Frame Vision Maps",
@@ -157,7 +242,11 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2025",
     "tagline": "Wearable AI",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee8ff6609d5b90ff7eb6_676b5b41e75a6e3bddc9aed1_FrameMemoryMap.png"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee8ff6609d5b90ff7eb6_676b5b41e75a6e3bddc9aed1_FrameMemoryMap.png",
+    "tech": [
+      "Vision-language model",
+      "Ollama"
+    ]
   },
   {
     "title": "BLIP vs Human Captions",
@@ -165,7 +254,13 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2025",
     "tagline": "LoRA Evaluation",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee8c949251584ac550d7_665d1e1bb6f7fd9021606098_RP4.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee8c949251584ac550d7_665d1e1bb6f7fd9021606098_RP4.jpeg",
+    "tech": [
+      "LLM",
+      "Vision-language model",
+      "Stable Diffusion",
+      "LoRA"
+    ]
   },
   {
     "title": "Memory Maps",
@@ -173,7 +268,11 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2025",
     "tagline": "Spatial Memory",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee8ef3deed0bc9b01568_676235b6f2231b29ba29df77_MemoryV1.png"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee8ef3deed0bc9b01568_676235b6f2231b29ba29df77_MemoryV1.png",
+    "tech": [
+      "Vision-language model",
+      "OpenCV"
+    ]
   },
   {
     "title": "Webcam to AI Captions",
@@ -181,7 +280,12 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2025",
     "tagline": "Real-Time Vision",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee8eb4c3114f430f381e_67623a5952b2d8c1680d87cd_WebcamLlava.png"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee8eb4c3114f430f381e_67623a5952b2d8c1680d87cd_WebcamLlava.png",
+    "tech": [
+      "Vision-language model",
+      "Ollama",
+      "OpenCV"
+    ]
   },
   {
     "title": "Image to Captions",
@@ -189,7 +293,10 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2025",
     "tagline": "Auto Caption",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6a44cde9f3a3f3a02dae29bf_Cover_ITC-p-800.jpg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6a44cde9f3a3f3a02dae29bf_Cover_ITC-p-800.jpg",
+    "tech": [
+      "Vision-language model"
+    ]
   },
   {
     "title": "AI for 3D Modeling and Rendering",
@@ -197,7 +304,11 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2024",
     "tagline": "AI 3D Workflow",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee891750f1d72c85a148_665d1cf0f9e9c7dae738043f_RP1.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee891750f1d72c85a148_665d1cf0f9e9c7dae738043f_RP1.jpeg",
+    "tech": [
+      "Stable Diffusion",
+      "ControlNet"
+    ]
   },
   {
     "title": "AI-Driven VR NPCs",
@@ -205,7 +316,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2024",
     "tagline": "AI NPCs",
     "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee8a0e3ad6594e4bcabe_665d2562e18f39e01a55d03b_RP10.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee8a0e3ad6594e4bcabe_665d2562e18f39e01a55d03b_RP10.jpeg",
+    "tech": []
   },
   {
     "title": "Compute. Couture",
@@ -213,7 +325,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2024",
     "tagline": "Kinetic Art",
     "section": "Physical Computation and Applied Research",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f7f77a763ec7c4e64f8db_665d180e787f6f7cbacc03ac_RP5.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f7f77a763ec7c4e64f8db_665d180e787f6f7cbacc03ac_RP5.jpeg",
+    "tech": []
   },
   {
     "title": "Compute. Art",
@@ -221,7 +334,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2024",
     "tagline": "Interactive Art",
     "section": "Physical Computation and Applied Research",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f7f6da7c2f8ce0323a016_665d2351787f6f7cbad3dd2d_RP8.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f7f6da7c2f8ce0323a016_665d2351787f6f7cbad3dd2d_RP8.jpeg",
+    "tech": []
   },
   {
     "title": "Compute. Play",
@@ -229,7 +343,10 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2024",
     "tagline": "Arduino Puppets",
     "section": "Physical Computation and Applied Research",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f7f6e0e62056750a696fc_665d227d7d04f4b91183b309_RP7.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f7f6e0e62056750a696fc_665d227d7d04f4b91183b309_RP7.jpeg",
+    "tech": [
+      "OpenCV"
+    ]
   },
   {
     "title": "Compute. Sound",
@@ -237,7 +354,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2024",
     "tagline": "Sound To Form",
     "section": "Physical Computation and Applied Research",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f7f6cdee45147c68bde47_665d245b527ac274bc405ea4_RP9.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f7f6cdee45147c68bde47_665d245b527ac274bc405ea4_RP9.jpeg",
+    "tech": []
   },
   {
     "title": "Compute. Detox",
@@ -245,7 +363,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2024",
     "tagline": "Mindfulness Tech",
     "section": "Physical Computation and Applied Research",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f7f6ebe25fc92fb791da6_665d187af92fee06d1edb043_RP6.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f7f6ebe25fc92fb791da6_665d187af92fee06d1edb043_RP6.jpeg",
+    "tech": []
   },
   {
     "title": "Nakuko Obelisk",
@@ -253,7 +372,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2023",
     "tagline": "Interactive Lighting",
     "section": "Physical Computation and Applied Research",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f800e08efc284106563f4_665d308d7c100e7f29d69b02_PP2.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f800e08efc284106563f4_665d308d7c100e7f29d69b02_PP2.jpeg",
+    "tech": []
   },
   {
     "title": "Parametric Prosthesis",
@@ -261,7 +381,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2023",
     "tagline": "Assistive Tech",
     "section": "Physical Computation and Applied Research",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f800d3323f96c5b0fdce9_665d34478d25452fc64c908a_PP5.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f800d3323f96c5b0fdce9_665d34478d25452fc64c908a_PP5.jpeg",
+    "tech": []
   },
   {
     "title": "Generative Reverb",
@@ -269,7 +390,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2023",
     "tagline": "Sound Forms",
     "section": "Physical Computation and Applied Research",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f800dbe25fc92fb79b906_665d33a5877f0e50aca11c94_PP4.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f800dbe25fc92fb79b906_665d33a5877f0e50aca11c94_PP4.jpeg",
+    "tech": []
   },
   {
     "title": "Alter-Ego in Design",
@@ -277,7 +399,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2023",
     "tagline": "Design Research",
     "section": "Physical Computation and Applied Research",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f800e6754219501e6c09b_665d35b9527ac274bc4d07af_PP7.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f800e6754219501e6c09b_665d35b9527ac274bc4d07af_PP7.jpeg",
+    "tech": []
   },
   {
     "title": "Hive Mind",
@@ -285,7 +408,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2023",
     "tagline": "Installation Art",
     "section": "Physical Computation and Applied Research",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f800e8fd275a326f4bee8_665d34feab1ad0ab4ba85710_PP6.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f800e8fd275a326f4bee8_665d34feab1ad0ab4ba85710_PP6.jpeg",
+    "tech": []
   },
   {
     "title": "Node Parameters",
@@ -293,7 +417,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2023",
     "tagline": "Parametric Design",
     "section": "Physical Computation and Applied Research",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f800ed0dad68923eb7efe_665d364a08e6c6c215b2c758_PP8.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f800ed0dad68923eb7efe_665d364a08e6c6c215b2c758_PP8.jpeg",
+    "tech": []
   },
   {
     "title": "Bio-Morphologies",
@@ -301,7 +426,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "2024",
     "tagline": "Biomimicry",
     "section": "Physical Computation and Applied Research",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f81e16c936e4b6ffbab1e_12%20Biomorphologies-p-800.png"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f81e16c936e4b6ffbab1e_12%20Biomorphologies-p-800.png",
+    "tech": []
   },
   {
     "title": "Computational Mythos",
@@ -309,7 +435,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "",
     "tagline": "Speculative Design",
     "section": "Narrative Exploration and Sketches",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f809b1936b0d565d2e37d_665d32be86f37eac6b350540_PP1.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f809b1936b0d565d2e37d_665d32be86f37eac6b350540_PP1.jpeg",
+    "tech": []
   },
   {
     "title": "Xeno Morphology",
@@ -317,7 +444,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "",
     "tagline": "Concept Architecture",
     "section": "Narrative Exploration and Sketches",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f8098d68624a4d00076b3_665d335278256a43448b7ef3_PP3.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f8098d68624a4d00076b3_665d335278256a43448b7ef3_PP3.jpeg",
+    "tech": []
   },
   {
     "title": "Algorithmic Modelling",
@@ -325,7 +453,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "",
     "tagline": "Generative 3D",
     "section": "Narrative Exploration and Sketches",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f80ea94814b6b39956302_665dd421d756b137edde620b_E4.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f80ea94814b6b39956302_665dd421d756b137edde620b_E4.jpeg",
+    "tech": []
   },
   {
     "title": "Fictional Narratives",
@@ -333,7 +462,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "",
     "tagline": "Sci-fi Sketches",
     "section": "Narrative Exploration and Sketches",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f80eacbdb2d5cd92fce86_665dd2038407f0ecf43d4677_E1.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f80eacbdb2d5cd92fce86_665dd2038407f0ecf43d4677_E1.jpeg",
+    "tech": []
   },
   {
     "title": "Character Stories",
@@ -341,7 +471,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "",
     "tagline": "Character Sketches",
     "section": "Narrative Exploration and Sketches",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f80ed08efc28410661809_665dd350f3b97dec88a4e745_E2.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f80ed08efc28410661809_665dd350f3b97dec88a4e745_E2.jpeg",
+    "tech": []
   },
   {
     "title": "Illustrative Sketches",
@@ -349,7 +480,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "",
     "tagline": "Industrial Design Sketches",
     "section": "Narrative Exploration and Sketches",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f80ed159d465bdb831cb9_665dd3d0a9c9261e09e363d0_E3.jpeg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f80ed159d465bdb831cb9_665dd3d0a9c9261e09e363d0_E3.jpeg",
+    "tech": []
   },
   {
     "title": "Industrial Design Prompts Generator",
@@ -357,7 +489,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "",
     "tagline": "ID Sprint",
     "section": "Narrative Exploration and Sketches",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f820d4adb1161c03aff27_07%20ID%20Prompts-p-800.png"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f820d4adb1161c03aff27_07%20ID%20Prompts-p-800.png",
+    "tech": []
   },
   {
     "title": "ADHD quiz",
@@ -365,7 +498,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "",
     "tagline": "ADHD Quiq ASRS V1.1",
     "section": "Narrative Exploration and Sketches",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6ac879aca5cef9e4cd73a054_ADHD%20cover-p-800.jpg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6ac879aca5cef9e4cd73a054_ADHD%20cover-p-800.jpg",
+    "tech": []
   },
   {
     "title": "Stopwatch - Time Tracker",
@@ -373,7 +507,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "",
     "tagline": "Time Tracker UI",
     "section": "Narrative Exploration and Sketches",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f820212268f2e6fd910c3_08%20Stopwatch-p-800.png"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f820212268f2e6fd910c3_08%20Stopwatch-p-800.png",
+    "tech": []
   },
   {
     "title": "RSVP - Rapid Serial Visual Presentation",
@@ -381,7 +516,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "",
     "tagline": "Speed Reader",
     "section": "Narrative Exploration and Sketches",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/69e05d6b5acadf71f38e1238_RSVPCover-p-800.png"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/69e05d6b5acadf71f38e1238_RSVPCover-p-800.png",
+    "tech": []
   },
   {
     "title": "Kara 108RG",
@@ -389,7 +525,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "",
     "tagline": "Modular floating pontoon kit Equipment to assists government authorities in mass evacuation of people in flooding and water logging situations in densely populated cities.",
     "section": "Mentored Projects",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcbbe/665dfdee12b4ceafb9a8ab84_MP1-p-800.jpg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcbbe/665dfdee12b4ceafb9a8ab84_MP1-p-800.jpg",
+    "tech": []
   },
   {
     "title": "Budding Buddy",
@@ -397,7 +534,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "",
     "tagline": "FURNITURE DESIGN FOR ADHD CHILDREN  A Study table that enhances the learning experience of kids having ATTENTION DEFICIT HYPERACTIVE DISORDER (ADHD). It creates a positive and fun environment which benefits the child, helping him learn better. It allows the child to fidget which helps him to enjoy and study simultaneously.",
     "section": "Mentored Projects",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcbbe/665dfe8830c4ef5a49a65996_MP2-p-800.jpg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcbbe/665dfe8830c4ef5a49a65996_MP2-p-800.jpg",
+    "tech": []
   },
   {
     "title": "Artemis 389",
@@ -405,7 +543,8 @@ window.PORTFOLIO_PROJECTS = [
     "year": "",
     "tagline": "Artemis 389 is a patient transfer equipment that provides effortless and pain-free experience to the patients and the healthcare workers while performing patient transfers inside hospitals. It makes patient transfers simpler, smoother and less time-consuming.",
     "section": "Mentored Projects",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcbbe/665dfe9d0685e93e1e5184b4_MP3-p-800.jpg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcbbe/665dfe9d0685e93e1e5184b4_MP3-p-800.jpg",
+    "tech": []
   },
   {
     "title": "Skims",
@@ -413,6 +552,7 @@ window.PORTFOLIO_PROJECTS = [
     "year": "",
     "tagline": "Skims: your own water shoes. A floating shoe to continue your daily routine in a flooded city.",
     "section": "Mentored Projects",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcbbe/665dfead39fcd52e5a75e01c_MP4-p-800.jpg"
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcbbe/665dfead39fcd52e5a75e01c_MP4-p-800.jpg",
+    "tech": []
   }
 ];

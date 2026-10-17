@@ -8,14 +8,20 @@ import json
 import re
 import sys
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 SRC = sys.argv[1] if len(sys.argv) > 1 else "https://portfolio-5208db.webflow.io/"
 BASE = "https://portfolio-5208db.webflow.io"
 
+
+def fetch(url):
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    return urllib.request.urlopen(req, timeout=30).read().decode("utf8")
+
+
 if SRC.startswith("http"):
-    req = urllib.request.Request(SRC, headers={"User-Agent": "Mozilla/5.0"})
-    page = urllib.request.urlopen(req).read().decode("utf8")
+    page = fetch(SRC)
 else:
     page = Path(SRC).read_text(encoding="utf8")
 
@@ -41,6 +47,47 @@ def cover(img_tag):
             return next((u for w, u in cands if w >= COVER_W), cands[-1][1])
     src = re.search(r'src="([^"]+)"', img_tag)
     return html.unescape(src.group(1)) if src else ""
+
+
+# Models / tools named in a project's write-up. Taglines rarely name them, so graph.js
+# matches its theme rules against these as well. Order = display order.
+TECH = {
+    "LLM": r"\bllms?\b|large language models?|\bgemma\w*|\bllama\b|\bphi-?3\b|\bgemini\b|\bgpt-?\d|\bmistral\b|\bqwen|\bai chat\b|chatbot|conversational ai",
+    "Vision-language model": r"\bllava\b|florence-2|\bblip\b|vision[- ]language|\bvlm\b",
+    "Ollama": r"\bollama\b",
+    "Stable Diffusion": r"stable diffusion|\bsdxl\b",
+    "FLUX": r"\bflux\b",
+    "Midjourney": r"\bmidjourney\b",
+    "ControlNet": r"\bcontrolnet\b",
+    "ComfyUI": r"\bcomfyui\b",
+    "LoRA": r"\blora\b",
+    "Image generation": r"image generation|text-to-image|\bfal ?ai\b",
+    "Text-to-3D": r"text-to-3d|\bmeshy\b|3d (model )?generation",
+    "Audio generation": r"\baudiogen\b|\baudiocraft\b",
+    "Text-to-speech": r"text-to-speech|\btts\b",
+    "YOLO": r"\byolo\w*",
+    "OpenCV": r"\bopencv\b",
+    "MediaPipe": r"\bmediapipe\b",
+    "Face recognition": r"\binsightface\b|face-api",
+}
+# Sentences crediting AI help with code or prose, not part of the project itself.
+CREDIT = re.compile(r"[^.]*\b(coding assistants?|writing assistance|attribution|reviewed and commented|(help|assistance) (of|from) \w+)\b[^.]*\.?", re.I)
+
+
+def tech(url):
+    """Tech named in a portfolio project page's body (title to the prev/next links)."""
+    if not url.startswith(BASE):
+        return []
+    try:
+        doc = fetch(url)
+    except Exception as e:  # keep building; the project just gets no tech tags
+        print("  ! could not fetch", url, e)
+        return []
+    a, b = doc.find('class="h1"'), doc.find("fs-prevnext")
+    body = doc[a if a >= 0 else 0:b if b > a else len(doc)]
+    body = re.sub(r"<(script|style)\b.*?</\1>", " ", body, flags=re.S)
+    text = CREDIT.sub(" ", clean(re.sub(r"<[^>]+>", " ", body)))
+    return [name for name, rx in TECH.items() if re.search(rx, text, re.I)]
 
 
 projects = []
@@ -72,6 +119,10 @@ for (a, sid), (b, _) in zip(starts, starts[1:]):
             "section": section,
             "image": cover(img.group(0)) if img else "",
         })
+
+with ThreadPoolExecutor(8) as pool:
+    for p, t in zip(projects, pool.map(tech, [p["url"] for p in projects])):
+        p["tech"] = t
 
 
 out = Path(__file__).parent / "data" / "projects.js"

@@ -7,13 +7,14 @@
   if (!window.d3 || !projects.length) return;
 
   // ---------------------------------------------------------------------
-  // 1. Themes: keyword rules applied to each project's title + tagline
+  // 1. Themes: keyword rules applied to each project's title + tagline + tech
+  //    (tech = models/tools named on the project page, see TECH in build_data.py)
   // ---------------------------------------------------------------------
   const THEME_RULES = {
     'Memory':            /memory|mind palace|temporal|chronotope|mirror|atlas|remember/i,
-    'Generative AI':     /lora|diffusion|controlnet|generative ai|3d generation|noise|gridphoto|gemma|fine-tun|persona|ai[- ]driven|npc/i,
-    'Computer Vision':   /vision|caption|webcam|blip|face|yolo|visual (analysis|triage)|llava|semiotic|sorter/i,
-    'Sound & Audio':     /sound|audio|acoustic|birdsong|reverb|bioacoustic|detox/i,
+    'Generative AI':     /lora|diffusion|controlnet|generative ai|3d generation|noise|gridphoto|gemma|fine-tun|persona|ai[- ]driven|npc|\bllm\b|vision-language|flux|midjourney|comfyui|image generation|text-to-3d|audio generation|text-to-speech/i,
+    'Computer Vision':   /vision|caption|webcam|blip|face|yolo|opencv|mediapipe|visual (analysis|triage)|llava|semiotic|sorter/i,
+    'Sound & Audio':     /sound|audio|acoustic|birdsong|reverb|bioacoustic|detox|speech/i,
     '3D & Spatial':      /3d|spatial|\bxr\b|\bvr\b|\bar\b|morpholog|architecture|pontoon|modelling/i,
     'Accessibility':     /accessib|disab|blind|adhd|prosthe|assistive|special children|patient|inclusive/i,
     'Interactive Art':   /interactive|kinetic|installation|puppet|lighting|couture|compute\.\s*(art|play|detox)|arduino/i,
@@ -33,7 +34,7 @@
   const byId = new Map();
 
   projects.forEach((p, i) => {
-    const text = `${p.title} ${p.tagline}`;
+    const text = `${p.title} ${p.tagline} ${(p.tech || []).join(' ')}`;
     const themes = Object.keys(THEME_RULES).filter(t => THEME_RULES[t].test(text));
     const n = {
       id: `p:${i}`, type: 'project', label: p.title, data: p, themes,
@@ -228,7 +229,7 @@
   // 5. Highlight state
   // ---------------------------------------------------------------------
   const state = { hovered: null, selected: null, section: null, query: '' };
-  const matches = n => state.query && (`${n.label} ${n.data ? n.data.tagline : ''}`).toLowerCase().includes(state.query);
+  const matches = n => state.query && (`${n.label} ${n.data ? `${n.data.tagline} ${(n.data.tech || []).join(' ')}` : ''}`).toLowerCase().includes(state.query);
 
   function applyState() {
     const focus = state.hovered || state.selected;
@@ -285,7 +286,8 @@
   // ---------------------------------------------------------------------
   const el = {
     cover: $('pg-panel-cover'), title: $('pg-panel-title'), meta: $('pg-panel-meta'), desc: $('pg-panel-desc'),
-    open: $('pg-panel-open'), themes: $('pg-panel-themes'), themesLabel: $('pg-themes-label'),
+    open: $('pg-panel-open'), tech: $('pg-panel-tech'), techLabel: $('pg-tech-label'),
+    themes: $('pg-panel-themes'), themesLabel: $('pg-themes-label'),
     projects: $('pg-panel-projects'), projectsLabel: $('pg-projects-label')
   };
 
@@ -332,6 +334,8 @@
       el.meta.textContent = [p.year, p.section].filter(Boolean).join(' · ');
       el.desc.textContent = p.tagline;
       el.open.href = p.url; el.open.hidden = false;
+      el.tech.textContent = (p.tech || []).join(' · ');
+      el.techLabel.hidden = !el.tech.textContent;
       el.themesLabel.hidden = !n.themes.length;
       n.themes.forEach(t => el.themes.append(chip(byId.get(`t:${t}`), { onClick: () => select(byId.get(`t:${t}`), { recenter: true }) })));
       // Other projects that share at least one theme, most shared first.
@@ -346,6 +350,7 @@
       el.meta.textContent = `Theme · ${n.members.length} projects`;
       el.desc.textContent = '';
       el.open.hidden = true;
+      el.tech.textContent = ''; el.techLabel.hidden = true;
       el.themesLabel.hidden = true;
       el.projectsLabel.hidden = false; el.projectsLabel.textContent = 'Projects';
       [...n.members].sort((a, b) => (b.data.year || '').localeCompare(a.data.year || '') || a.label.localeCompare(b.label))
