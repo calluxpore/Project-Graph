@@ -8,15 +8,14 @@
   <meta property="og:title" content="Project Graph · Samarth Reddy">
   <meta property="og:description" content="Portfolio projects grouped by section and linked through the themes they share.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0e0e11" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#faf8f4">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%23c85f42'/%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%236b6b73' stroke-width='3'/%3E%3C/svg%3E">
   <script>
-    // Apply the saved / preferred theme before first paint.
+    // Light by default; apply a saved choice from the toggle before first paint.
     (() => {
       let t = null;
       try { t = localStorage.getItem('pg-theme'); } catch (e) { /* storage blocked */ }
-      if (t || matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.dataset.theme = t || 'dark';
+      if (t) document.documentElement.dataset.theme = t;
     })();
   </script>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
