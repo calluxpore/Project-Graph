@@ -15,3 +15,7 @@ node ~/.claude/skills/hairline-create/look.mjs portfolio.js --answer 67,25,18 --
 ```
 
 That builds a checking page (`hairline-portfolio.html`, git-ignored), validates the figure and writes a contact sheet to look over. `field.html` loads `portfolio.js` directly, so there is nothing else to build.
+
+## Deploying
+
+GitHub Pages lets browsers cache files for 10 minutes, so a new page could pair with an old cached `style.css` or script. Both pages load their local files with a version string (`style.css?v=20261024`); bump it in `index.html` and `field.html` whenever you change CSS or JS.

@@ -24,6 +24,18 @@
     stage.setAttribute('aria-label', figure.means);
     const svg = HL.mk('svg', { viewBox: '0 0 400 320', 'aria-hidden': 'true' }, stage);
 
+    // The largest 5:4 box that fits the stage, centred, on any screen. Done here rather
+    // than only in CSS so it holds even with an older cached stylesheet.
+    const area = stage.parentElement;
+    Object.assign(stage.style, { position: 'absolute', inset: '0', margin: 'auto', aspectRatio: 'auto' });
+    const fitStage = () => {
+      const w = Math.max(0, Math.min(area.clientWidth * 0.98, area.clientHeight * 0.98 * 1.25));
+      stage.style.width = `${w}px`;
+      stage.style.height = `${w * 0.8}px`;
+    };
+    fitStage();
+    new ResizeObserver(fitStage).observe(area);
+
     // The figure writes "rest" when nothing is under the pointer; say what to do instead.
     const read = {
       set textContent(value) {
