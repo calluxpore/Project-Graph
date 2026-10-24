@@ -8,7 +8,7 @@
  * project. The slider is the radius, in cells.
  */
 const {
-  Cam, clamp, facing, fit, prism, proj, rings, unproj, spring, stepS,
+  Cam, clamp, facing, fit, hull, prism, proj, ringAt, rings, unproj, spring, stepS,
   flatDot, mk, place, pointer, put, register, disposer, solid,
 } = HL;
 
@@ -125,12 +125,27 @@ function mount({ stage, svg, read }, value) {
   });
   bag.add(B.unregister);
 
-  // Rule 01: the block under the pointer is found on the rest pose, each block's own rest lid.
+  // Rule 01: the block under the pointer is found on the rest pose. Each block's rest
+  // silhouette, lid and sides, is a fixed convex outline on screen; where outlines
+  // overlap the nearer block wins, as it does in the drawing (blocks are in paint order).
+  for (const b of blocks) b.hit = hull(ringAt(P, b.rg[0], BED).concat(ringAt(P, b.rg[0], BED + b.h0)));
+  const inside = (poly, [x, y]) => {
+    let sign = 0;
+    for (let i = 0; i < poly.length; i++) {
+      const [ax, ay] = poly[i], [bx, by] = poly[(i + 1) % poly.length];
+      const s = Math.sign((bx - ax) * (y - ay) - (by - ay) * (x - ax));
+      if (s && sign && s !== sign) return false;
+      sign = sign || s;
+    }
+    return true;
+  };
   function pick(p) {
-    let best = null, bd = Infinity;
+    for (let i = blocks.length - 1; i >= 0; i--) if (inside(blocks[i].hit, p)) return blocks[i];
+    // In the narrow gaps between blocks, the block whose footprint is nearest on the bed.
+    const [gx, gy] = unproj(C, p[0], p[1], BED);
+    let best = null, bd = CELL * 0.6;
     for (const b of blocks) {
-      const [wx, wy] = unproj(C, p[0], p[1], BED + b.h0);
-      const d = Math.hypot(wx - b.cx, wy - b.cy);
+      const d = Math.hypot(gx - b.cx, gy - b.cy);
       if (d < bd) { bd = d; best = b; }
     }
     return best;
@@ -148,9 +163,7 @@ function mount({ stage, svg, read }, value) {
 
   bag.add(pointer(stage, {
     move: (p) => {
-      const [gx, gy] = unproj(C, p[0], p[1], BED);
-      const on = gx > -6 && gy > -6 && gx < X1 + 6 && gy < Y1 + 6;
-      const next = on ? pick(p) : null;
+      const next = pick(p);
       if (next !== over) { over = next; retarget(); }
     },
     leave: () => { over = null; retarget(); },
