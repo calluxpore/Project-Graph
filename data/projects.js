@@ -1,11 +1,11 @@
 window.PORTFOLIO_PROJECTS = [
   {
     "title": "Mind Palace XR",
-    "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/mind-palace-xr",
+    "url": "https://portfolio-5208db.webflow.io/cognitive-memory-augmentation/mind-palace-xr",
     "year": "2026",
     "tagline": "AI-Based AR Memory App",
-    "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f81a1a9cdd39d5ce684ae_01%20Mindpalace%20XR-p-800.png",
+    "section": "Cognitive & Memory Augmentation",
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6ad61a1fbc6608cf4a959618_680f81a1a9cdd39d5ce684ae_01%2520Mindpalace%2520XR.png",
     "tech": [
       "LLM",
       "Image generation",
@@ -13,11 +13,95 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
+    "title": "Birdsong Canvas",
+    "url": "https://portfolio-5208db.webflow.io/cognitive-memory-augmentation/birdsong-canvas",
+    "year": "2026",
+    "tagline": "Generative AI, Bioacoustics",
+    "section": "Cognitive & Memory Augmentation",
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6ad61a1a371ba39dd9a86b44_6aaa8b2ee506b09b4b89c042_Gemini_Generated_Image_ldlhsildlhsildlh.jpeg",
+    "tech": [
+      "LLM",
+      "Stable Diffusion",
+      "Image generation"
+    ]
+  },
+  {
+    "title": "Acoustic Chronotope",
+    "url": "https://portfolio-5208db.webflow.io/cognitive-memory-augmentation/acoustic-chronotope",
+    "year": "2026",
+    "tagline": "Spatial Audio Memory Soundscapes",
+    "section": "Cognitive & Memory Augmentation",
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6ad61a1bd0d04a27b5d589ac_6a4489740458b6d5a69b7a65_Cover_AC1.jpeg",
+    "tech": [
+      "LLM",
+      "Vision-language model",
+      "Ollama",
+      "Audio generation"
+    ]
+  },
+  {
+    "title": "Memory Mirror",
+    "url": "https://portfolio-5208db.webflow.io/cognitive-memory-augmentation/memory-mirror",
+    "year": "2026",
+    "tagline": "Face Blindness, Remembered",
+    "section": "Cognitive & Memory Augmentation",
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6ad61a1c371ba39dd9a86bf4_69ec63ef10ee4a6ef969a433_Cover_Memory%2520Mirror.jpeg",
+    "tech": [
+      "Face recognition"
+    ]
+  },
+  {
+    "title": "Temporal Self",
+    "url": "https://portfolio-5208db.webflow.io/cognitive-memory-augmentation/temporal-self",
+    "year": "2026",
+    "tagline": "A Memory Atlas Project",
+    "section": "Cognitive & Memory Augmentation",
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6ad61a2022e9132b8717b79a_69c755620fc0b0aec19dcfd8_Temporal%2520Self_Cover.png",
+    "tech": [
+      "LLM"
+    ]
+  },
+  {
+    "title": "Computational Semiotics",
+    "url": "https://portfolio-5208db.webflow.io/cognitive-memory-augmentation/computational-semiotics",
+    "year": "2025",
+    "tagline": "AI-Based Visual Analysis",
+    "section": "Cognitive & Memory Augmentation",
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6ad61a1d1a9ccd34653e9fdb_68e94cd216aa6194ba22a327_Cmp%2520sem14.jpeg",
+    "tech": [
+      "LLM"
+    ]
+  },
+  {
+    "title": "◉–◉ Frame Vision Maps",
+    "url": "https://portfolio-5208db.webflow.io/cognitive-memory-augmentation/framevisionmaps",
+    "year": "2025",
+    "tagline": "Wearable AI",
+    "section": "Cognitive & Memory Augmentation",
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6ad61a19e5cc08f7853a56c0_680eee8ff6609d5b90ff7eb6_676b5b41e75a6e3bddc9aed1_FrameMemoryMap.png",
+    "tech": [
+      "Vision-language model",
+      "Ollama"
+    ]
+  },
+  {
+    "title": "Memory Maps",
+    "url": "https://portfolio-5208db.webflow.io/cognitive-memory-augmentation/memory-maps",
+    "year": "2025",
+    "tagline": "Spatial Memory",
+    "section": "Cognitive & Memory Augmentation",
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6ad61a1ee9c36d6d45dd48c9_680eee8ef3deed0bc9b01568_676235b6f2231b29ba29df77_MemoryV1.png",
+    "tech": [
+      "Vision-language model",
+      "OpenCV"
+    ]
+  },
+  {
     "title": "GridPhoto",
     "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/gridphoto",
     "year": "2026",
     "tagline": "High-density visual triage for LoRA training runs.",
-    "section": "Artificial Intelligence and Extended Reality",
+    "section": "Artificial Intelligence and Diffusion",
     "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6ac4f8082b94a76437b8d1e4_Futuristic%20Holographic%20Art%20Gallery-p-800.png",
     "tech": [
       "LoRA"
@@ -28,7 +112,7 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/control-map-studio",
     "year": "2026",
     "tagline": "AI assisted app for ControlNet pipeline",
-    "section": "Artificial Intelligence and Extended Reality",
+    "section": "Artificial Intelligence and Diffusion",
     "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6ab0b7f5567046034b1c8b0a_controlstudiomap_cover-p-800.png",
     "tech": [
       "Stable Diffusion",
@@ -41,7 +125,7 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/lora-dataset-studio",
     "year": "2026",
     "tagline": "AI assisted app for Pre LoRA training",
-    "section": "Artificial Intelligence and Extended Reality",
+    "section": "Artificial Intelligence and Diffusion",
     "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6aad3a58944d3471151abc24_Lorastudio-p-800.jpeg",
     "tech": [
       "Vision-language model",
@@ -50,25 +134,12 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "title": "Birdsong Canvas",
-    "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/birdsong-canvas",
-    "year": "2026",
-    "tagline": "Generative AI, Bioacoustics",
-    "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6aaa8b2ee506b09b4b89c042_Gemini_Generated_Image_ldlhsildlhsildlh-p-800.jpg",
-    "tech": [
-      "LLM",
-      "Stable Diffusion",
-      "Image generation"
-    ]
-  },
-  {
     "title": "Echo-Gnosis",
     "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/echo-gnosis",
     "year": "2026",
     "tagline": "AI Assisted Spatial Accessibility",
-    "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6a46022ed769ae7cb45851e2_eg_cOVER-p-800.jpg",
+    "section": "Artificial Intelligence and Diffusion",
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6ad61a1578e3d73435d86a44_6a46022ed769ae7cb45851e2_eg_cOVER.jpeg",
     "tech": [
       "LLM",
       "Vision-language model",
@@ -78,36 +149,11 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "title": "Acoustic Chronotope",
-    "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/acoustic-chronotope",
-    "year": "2026",
-    "tagline": "Spatial Audio Memory Soundscapes",
-    "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6a4489740458b6d5a69b7a65_Cover_AC1-p-800.jpg",
-    "tech": [
-      "LLM",
-      "Vision-language model",
-      "Ollama",
-      "Audio generation"
-    ]
-  },
-  {
-    "title": "Memory Mirror",
-    "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/memory-mirror",
-    "year": "2026",
-    "tagline": "Face Blindness, Remembered",
-    "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/69ec63ef10ee4a6ef969a433_Cover_Memory%20Mirror-p-800.jpg",
-    "tech": [
-      "Face recognition"
-    ]
-  },
-  {
     "title": "Toronto Broski - Gemma-4",
     "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/toronto-broski---gemma-4",
     "year": "2026",
     "tagline": "Persona Fine-tuning, Dialect AI",
-    "section": "Artificial Intelligence and Extended Reality",
+    "section": "Artificial Intelligence and Diffusion",
     "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/69dc64a0c36a6445a05bedd9_Broski_Cover%20Green-p-800.jpg",
     "tech": [
       "LLM",
@@ -120,19 +166,8 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/mapletax",
     "year": "2026",
     "tagline": "Smart filing, simplified by AI.",
-    "section": "Artificial Intelligence and Extended Reality",
+    "section": "Artificial Intelligence and Diffusion",
     "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/69d5e196104681f897bdf4dc_Mpletx_cover-p-800.png",
-    "tech": [
-      "LLM"
-    ]
-  },
-  {
-    "title": "Temporal Self",
-    "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/temporal-self",
-    "year": "2026",
-    "tagline": "A Memory Atlas Project",
-    "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/69c755620fc0b0aec19dcfd8_Temporal%20Self_Cover-p-800.png",
     "tech": [
       "LLM"
     ]
@@ -142,7 +177,7 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/local-offline-face-based-image-sorter",
     "year": "2026",
     "tagline": "Machine Learning / Computer Vision / Data Engineering",
-    "section": "Artificial Intelligence and Extended Reality",
+    "section": "Artificial Intelligence and Diffusion",
     "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/69898c7e3ca898267838e65a_project%20cover%2016-p-800.png",
     "tech": [
       "ControlNet",
@@ -155,27 +190,16 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/omafa-ai-xr-evaluation",
     "year": "2025",
     "tagline": "Govt of Canada Project",
-    "section": "Artificial Intelligence and Extended Reality",
+    "section": "Artificial Intelligence and Diffusion",
     "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6956045da8d235ce11c9f09b_MAFA-p-800.jpg",
     "tech": []
-  },
-  {
-    "title": "Computational Semiotics",
-    "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/computational-semiotics",
-    "year": "2025",
-    "tagline": "AI-Based Visual Analysis",
-    "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/68e94cd216aa6194ba22a327_Cmp%20sem14-p-800.jpg",
-    "tech": [
-      "LLM"
-    ]
   },
   {
     "title": "Real-Time Webcam Captioning with LLaVA, Phi-3",
     "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/real-time-webcam-captioning-with-llava-phi-3-and-ollama",
     "year": "2025",
     "tagline": "Real-Time Caption",
-    "section": "Artificial Intelligence and Extended Reality",
+    "section": "Artificial Intelligence and Diffusion",
     "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/682371edf7211ff12745c887_webcover1-p-800.jpg",
     "tech": [
       "LLM",
@@ -189,7 +213,7 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/from-noise-to-art",
     "year": "2025",
     "tagline": "AI LoRA Training",
-    "section": "Artificial Intelligence and Extended Reality",
+    "section": "Artificial Intelligence and Diffusion",
     "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6810238a4de5a74b06b4699f_02%20From%20Noise%20to%20Art-p-800.png",
     "tech": [
       "Stable Diffusion",
@@ -204,7 +228,7 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/yolo-diffusion",
     "year": "2025",
     "tagline": "YOLO Model Training",
-    "section": "Artificial Intelligence and Extended Reality",
+    "section": "Artificial Intelligence and Diffusion",
     "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f818f0e62056750a91735_03%20Yolo%20Diffusion-p-800.png",
     "tech": [
       "FLUX",
@@ -217,7 +241,7 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/controlnet",
     "year": "2025",
     "tagline": "Structural Guidance",
-    "section": "Artificial Intelligence and Extended Reality",
+    "section": "Artificial Intelligence and Diffusion",
     "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680f81bde7b94da4c2ed976d_04%20ControlNet-p-800.png",
     "tech": [
       "ControlNet",
@@ -230,22 +254,10 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/memory-makers-turning-words-into-3d-models",
     "year": "2025",
     "tagline": "3D Generation AI",
-    "section": "Artificial Intelligence and Extended Reality",
+    "section": "Artificial Intelligence and Diffusion",
     "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee8f77a9f7af1124150d_6782cd13cc6bd051aec14c8a_3dtext.png",
     "tech": [
       "Text-to-3D"
-    ]
-  },
-  {
-    "title": "◉–◉ Frame Vision Maps",
-    "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/framevisionmaps",
-    "year": "2025",
-    "tagline": "Wearable AI",
-    "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee8ff6609d5b90ff7eb6_676b5b41e75a6e3bddc9aed1_FrameMemoryMap.png",
-    "tech": [
-      "Vision-language model",
-      "Ollama"
     ]
   },
   {
@@ -253,7 +265,7 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/ai-lora-evaluation",
     "year": "2025",
     "tagline": "LoRA Evaluation",
-    "section": "Artificial Intelligence and Extended Reality",
+    "section": "Artificial Intelligence and Diffusion",
     "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee8c949251584ac550d7_665d1e1bb6f7fd9021606098_RP4.jpeg",
     "tech": [
       "LLM",
@@ -263,23 +275,11 @@ window.PORTFOLIO_PROJECTS = [
     ]
   },
   {
-    "title": "Memory Maps",
-    "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/memory-maps",
-    "year": "2025",
-    "tagline": "Spatial Memory",
-    "section": "Artificial Intelligence and Extended Reality",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee8ef3deed0bc9b01568_676235b6f2231b29ba29df77_MemoryV1.png",
-    "tech": [
-      "Vision-language model",
-      "OpenCV"
-    ]
-  },
-  {
     "title": "Webcam to AI Captions",
     "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/webcamtocaptions",
     "year": "2025",
     "tagline": "Real-Time Vision",
-    "section": "Artificial Intelligence and Extended Reality",
+    "section": "Artificial Intelligence and Diffusion",
     "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee8eb4c3114f430f381e_67623a5952b2d8c1680d87cd_WebcamLlava.png",
     "tech": [
       "Vision-language model",
@@ -292,7 +292,7 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/image-to-captions",
     "year": "2025",
     "tagline": "Auto Caption",
-    "section": "Artificial Intelligence and Extended Reality",
+    "section": "Artificial Intelligence and Diffusion",
     "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/6a44cde9f3a3f3a02dae29bf_Cover_ITC-p-800.jpg",
     "tech": [
       "Vision-language model"
@@ -303,7 +303,7 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/ai-for-3d-modeling",
     "year": "2024",
     "tagline": "AI 3D Workflow",
-    "section": "Artificial Intelligence and Extended Reality",
+    "section": "Artificial Intelligence and Diffusion",
     "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee891750f1d72c85a148_665d1cf0f9e9c7dae738043f_RP1.jpeg",
     "tech": [
       "Stable Diffusion",
@@ -315,7 +315,7 @@ window.PORTFOLIO_PROJECTS = [
     "url": "https://portfolio-5208db.webflow.io/artificial-intelligence-and-extended-reality/ai-driven-vr-npcs",
     "year": "2024",
     "tagline": "AI NPCs",
-    "section": "Artificial Intelligence and Extended Reality",
+    "section": "Artificial Intelligence and Diffusion",
     "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcc50/680eee8a0e3ad6594e4bcabe_665d2562e18f39e01a55d03b_RP10.jpeg",
     "tech": []
   },
@@ -525,7 +525,7 @@ window.PORTFOLIO_PROJECTS = [
     "year": "",
     "tagline": "Modular floating pontoon kit Equipment to assists government authorities in mass evacuation of people in flooding and water logging situations in densely populated cities.",
     "section": "Mentored Projects",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcbbe/665dfdee12b4ceafb9a8ab84_MP1-p-800.jpg",
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcbbe/665dfdee12b4ceafb9a8ab84_MP1-p-800.webp",
     "tech": []
   },
   {
@@ -534,7 +534,7 @@ window.PORTFOLIO_PROJECTS = [
     "year": "",
     "tagline": "FURNITURE DESIGN FOR ADHD CHILDREN  A Study table that enhances the learning experience of kids having ATTENTION DEFICIT HYPERACTIVE DISORDER (ADHD). It creates a positive and fun environment which benefits the child, helping him learn better. It allows the child to fidget which helps him to enjoy and study simultaneously.",
     "section": "Mentored Projects",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcbbe/665dfe8830c4ef5a49a65996_MP2-p-800.jpg",
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcbbe/665dfe8830c4ef5a49a65996_MP2-p-800.webp",
     "tech": []
   },
   {
@@ -543,7 +543,7 @@ window.PORTFOLIO_PROJECTS = [
     "year": "",
     "tagline": "Artemis 389 is a patient transfer equipment that provides effortless and pain-free experience to the patients and the healthcare workers while performing patient transfers inside hospitals. It makes patient transfers simpler, smoother and less time-consuming.",
     "section": "Mentored Projects",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcbbe/665dfe9d0685e93e1e5184b4_MP3-p-800.jpg",
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcbbe/665dfe9d0685e93e1e5184b4_MP3-p-800.webp",
     "tech": []
   },
   {
@@ -552,7 +552,7 @@ window.PORTFOLIO_PROJECTS = [
     "year": "",
     "tagline": "Skims: your own water shoes. A floating shoe to continue your daily routine in a flooded city.",
     "section": "Mentored Projects",
-    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcbbe/665dfead39fcd52e5a75e01c_MP4-p-800.jpg",
+    "image": "https://cdn.prod.website-files.com/665ce57def7361e24f1dcbbe/665dfead39fcd52e5a75e01c_MP4-p-800.webp",
     "tech": []
   }
 ];

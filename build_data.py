@@ -74,20 +74,22 @@ TECH = {
 CREDIT = re.compile(r"[^.]*\b(coding assistants?|writing assistance|attribution|reviewed and commented|(help|assistance) (of|from) \w+)\b[^.]*\.?", re.I)
 
 
-def tech(url):
-    """Tech named in a portfolio project page's body (title to the prev/next links)."""
+def details(url):
+    """(tech, year) from a portfolio project page: the tech named in its body (title to
+    the prev/next links) and the year in its metadata ("Year 2026")."""
     if not url.startswith(BASE):
-        return []
+        return [], ""
     try:
         doc = fetch(url)
     except Exception as e:  # keep building; the project just gets no tech tags
         print("  ! could not fetch", url, e)
-        return []
+        return [], ""
     a, b = doc.find('class="h1"'), doc.find("fs-prevnext")
     body = doc[a if a >= 0 else 0:b if b > a else len(doc)]
     body = re.sub(r"<(script|style)\b.*?</\1>", " ", body, flags=re.S)
     text = CREDIT.sub(" ", clean(re.sub(r"<[^>]+>", " ", body)))
-    return [name for name, rx in TECH.items() if re.search(rx, text, re.I)]
+    year = re.search(r"\bYear\s+(20\d\d)\b", text)
+    return [name for name, rx in TECH.items() if re.search(rx, text, re.I)], year.group(1) if year else ""
 
 
 projects = []
@@ -121,8 +123,9 @@ for (a, sid), (b, _) in zip(starts, starts[1:]):
         })
 
 with ThreadPoolExecutor(8) as pool:
-    for p, t in zip(projects, pool.map(tech, [p["url"] for p in projects])):
+    for p, (t, year) in zip(projects, pool.map(details, [p["url"] for p in projects])):
         p["tech"] = t
+        p["year"] = p["year"] or year  # the homepage cards no longer show the year
 
 
 out = Path(__file__).parent / "data" / "projects.js"
