@@ -18,4 +18,4 @@ That builds a checking page (`hairline-portfolio.html`, git-ignored), validates 
 
 ## Deploying
 
-GitHub Pages lets browsers cache files for 10 minutes, so a new page could pair with an old cached `style.css` or script. Both pages load their local files with a version string (`style.css?v=20261024b`); bump it in `index.html` and `field.html` whenever you change CSS or JS.
+GitHub Pages lets browsers cache files for 10 minutes, so a new page could pair with an old cached `style.css` or script. Both pages load their local files with a version string (`style.css?v=20261024c`); bump it in `index.html` and `field.html` whenever you change CSS or JS.

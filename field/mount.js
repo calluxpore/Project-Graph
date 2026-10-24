@@ -28,13 +28,16 @@
     // than only in CSS so it holds even with an older cached stylesheet.
     const area = stage.parentElement;
     Object.assign(stage.style, { position: 'absolute', inset: '0', margin: 'auto', aspectRatio: 'auto' });
+    Object.assign(out.style, { left: '0', right: '0', textAlign: 'center' });
+    let floor = 320; // the drawing's lowest point in viewBox units: the plinth's front edge
     const fitStage = () => {
       const w = Math.max(0, Math.min(area.clientWidth * 0.98, area.clientHeight * 0.98 * 1.25));
       stage.style.width = `${w}px`;
       stage.style.height = `${w * 0.8}px`;
+      // The read-out sits centred just under the field, in the space below the plinth.
+      const top = stage.offsetTop + (floor / 320) * stage.offsetHeight + 16;
+      out.style.top = `${Math.min(top, area.clientHeight - out.offsetHeight - 8)}px`;
     };
-    fitStage();
-    new ResizeObserver(fitStage).observe(area);
 
     // The figure writes "rest" when nothing is under the pointer; say what to do instead.
     const read = {
@@ -46,5 +49,10 @@
     };
     read.textContent = 'rest';
     figure.mount({ stage, svg, read }, figure.range[1]);
+
+    // The plinth is drawn in mount and nothing moves below it, so measure it once.
+    try { const b = svg.getBBox(); if (b.height) floor = b.y + b.height; } catch (e) { /* not rendered yet */ }
+    fitStage();
+    new ResizeObserver(fitStage).observe(area);
   };
 })();
