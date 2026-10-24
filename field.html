@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project Field · Samarth Reddy, Creative Technologist</title>
+  <meta name="description" content="Samarth Reddy's portfolio as a field: every project a block on its section's bed, taller the newer it is. Move over it and the projects rise.">
+  <meta name="theme-color" content="#faf8f4">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='7' fill='%23c85f42'/%3E%3Ccircle cx='16' cy='16' r='13' fill='none' stroke='%236b6b73' stroke-width='3'/%3E%3C/svg%3E">
+  <script>
+    // Light by default; same saved choice as the graph.
+    (() => {
+      let t = null;
+      try { t = localStorage.getItem('pg-theme'); } catch (e) { /* storage blocked */ }
+      if (t) document.documentElement.dataset.theme = t;
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="field/kernel.js" defer></script>
+  <script src="field/mount.js" defer></script>
+  <script type="module" src="field/portfolio.js"></script>
+</head>
+<body>
+  <main class="pg" aria-label="Portfolio as a field">
+    <header class="pg-toolbar">
+      <a class="pg-brand" href="https://portfolio-5208db.webflow.io/" title="Back to portfolio">✱ Sam<span>/ field</span></a>
+      <p class="pg-stats">52 projects · 4 sections · newer stands taller</p>
+      <nav class="pg-views" aria-label="Views">
+        <a href="./">Graph</a>
+        <a href="field.html" aria-current="page">Field</a>
+      </nav>
+      <button type="button" class="pg-btn" id="pg-theme-btn" title="Toggle light / dark" aria-label="Toggle light or dark mode">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+      </button>
+    </header>
+
+    <div class="pg-stage pg-field-stage">
+      <div class="pg-figure" id="pg-figure"></div>
+      <p class="pg-readout" id="pg-readout" aria-live="polite"></p>
+    </div>
+
+    <footer class="pg-footer">
+      <p class="pg-help" id="pg-help">Move over the field: the projects near the pointer rise · Each bed is a section, each block a project</p>
+    </footer>
+  </main>
+
+  <noscript><p style="padding:2rem">The project field needs JavaScript.</p></noscript>
+</body>
+</html>
