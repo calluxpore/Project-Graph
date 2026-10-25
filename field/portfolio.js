@@ -173,6 +173,9 @@ function mount({ stage, svg, read }, value) {
   return {
     set: (v) => { R = clamp(v, 0.5, 8) * CELL; retarget(); },
     destroy: bag.dispose,
+    // For a host page's search: the projects, and raising one as if the pointer were on it.
+    projects: SECTIONS.flatMap(([, items], section) => items.map(([name, year]) => ({ name, year, section }))),
+    focus: (name) => { over = blocks.find((b) => b.name === name) || null; retarget(); },
   };
 }
 

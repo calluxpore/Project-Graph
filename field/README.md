@@ -5,7 +5,7 @@
 | File | Purpose |
 |---|---|
 | `portfolio.js` | The figure. The only file to edit. Its project list is written into `SECTIONS` |
-| `mount.js` | Mounts the figure full size on `field.html` (stage, read-out, theme toggle) |
+| `mount.js` | Mounts the figure full size on `field.html`: stage, read-out, search (via the handle's `projects` and `focus`) and theme toggle |
 | `kernel.js` | Hairline's engine, an unchanged copy from the `hairline-create` skill. Don't edit |
 
 The figure is self-contained by design (no fetch), so after `build_data.py` adds or renames projects, update `SECTIONS` in `portfolio.js`, then check it with the skill:
@@ -18,4 +18,4 @@ That builds a checking page (`hairline-portfolio.html`, git-ignored), validates 
 
 ## Deploying
 
-GitHub Pages lets browsers cache files for 10 minutes, so a new page could pair with an old cached `style.css` or script. Both pages load their local files with a version string (`style.css?v=20261024d`); bump it in `index.html` and `field.html` whenever you change CSS or JS.
+GitHub Pages lets browsers cache files for 10 minutes, so a new page could pair with an old cached `style.css` or script. Both pages load their local files with a version string (`style.css?v=20261025a`); bump it in `index.html` and `field.html` whenever you change CSS or JS.

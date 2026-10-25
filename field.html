@@ -18,20 +18,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261024d">
-  <script src="field/kernel.js?v=20261024d" defer></script>
-  <script src="field/mount.js?v=20261024d" defer></script>
-  <script type="module" src="field/portfolio.js?v=20261024d"></script>
+  <link rel="stylesheet" href="style.css?v=20261025a">
+  <script src="field/kernel.js?v=20261025a" defer></script>
+  <script src="field/mount.js?v=20261025a" defer></script>
+  <script type="module" src="field/portfolio.js?v=20261025a"></script>
 </head>
 <body>
   <main class="pg" aria-label="Portfolio as a field">
     <header class="pg-toolbar">
       <a class="pg-brand" href="https://portfolio-5208db.webflow.io/" title="Back to portfolio">✱ Sam<span>/ field</span></a>
-      <p class="pg-stats">52 projects · 5 sections · newer stands taller</p>
+
+      <div class="pg-search">
+        <svg class="pg-search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="20" y1="20" x2="16.2" y2="16.2"></line></svg>
+        <input type="search" id="pg-search-input" placeholder="Find a project" autocomplete="off" spellcheck="false"
+               role="combobox" aria-expanded="false" aria-controls="pg-suggestions" aria-autocomplete="list" aria-label="Find a project">
+        <kbd class="pg-kbd" aria-hidden="true">/</kbd>
+        <ul id="pg-suggestions" class="pg-suggestions" role="listbox" hidden></ul>
+      </div>
+
+      <p class="pg-stats" id="pg-stats"></p>
+
       <nav class="pg-views" aria-label="Views">
         <a href="./">Graph</a>
         <a href="field.html" aria-current="page">Field</a>
       </nav>
+
       <button type="button" class="pg-btn" id="pg-theme-btn" title="Toggle light / dark" aria-label="Toggle light or dark mode">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
       </button>
