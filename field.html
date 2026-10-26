@@ -18,10 +18,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261025a">
-  <script src="field/kernel.js?v=20261025a" defer></script>
-  <script src="field/mount.js?v=20261025a" defer></script>
-  <script type="module" src="field/portfolio.js?v=20261025a"></script>
+  <link rel="stylesheet" href="style.css?v=20261026f">
+  <script src="data/projects.js?v=20261026a" defer></script>
+  <script src="field/kernel.js?v=20261026a" defer></script>
+  <script src="field/mount.js?v=20261026b" defer></script>
+  <script type="module" src="field/portfolio.js?v=20261026a"></script>
 </head>
 <body>
   <main class="pg" aria-label="Portfolio as a field">
@@ -51,10 +52,32 @@
     <div class="pg-stage pg-field-stage">
       <div class="pg-figure" id="pg-figure"></div>
       <p class="pg-readout" id="pg-readout" aria-live="polite"></p>
+
+      <aside id="pg-panel" class="pg-panel" aria-live="polite" hidden>
+        <div class="pg-panel-head">
+          <span class="pg-panel-dot" id="pg-panel-dot"></span>
+          <div class="pg-panel-titles">
+            <h2 class="pg-panel-title" id="pg-panel-title"></h2>
+            <p class="pg-panel-meta" id="pg-panel-meta"></p>
+          </div>
+          <button type="button" class="pg-btn" id="pg-panel-close" aria-label="Close" title="Close (Esc)">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg>
+          </button>
+        </div>
+        <div class="pg-panel-body">
+          <img class="pg-panel-cover" id="pg-panel-cover" alt="" decoding="async" hidden>
+          <p class="pg-panel-desc" id="pg-panel-desc"></p>
+          <a class="pg-open" id="pg-panel-open" target="_blank" rel="noopener" hidden>Open project <span aria-hidden="true">↗</span></a>
+          <h3 class="pg-panel-label" id="pg-tech-label" hidden>Built with</h3>
+          <p class="pg-panel-tech" id="pg-panel-tech"></p>
+          <h3 class="pg-panel-label" id="pg-projects-label">Also in this section</h3>
+          <ol class="pg-list" id="pg-panel-projects"></ol>
+        </div>
+      </aside>
     </div>
 
     <footer class="pg-footer">
-      <p class="pg-help" id="pg-help">Move over the field: the projects near the pointer rise · Each bed is a section, each block a project</p>
+      <p class="pg-help" id="pg-help">Move over the field: the projects near the pointer rise · Click a block for details · Each bed is a section, each block a project</p>
     </footer>
   </main>
 

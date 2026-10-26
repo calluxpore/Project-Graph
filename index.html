@@ -23,10 +23,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20261025a">
+  <link rel="stylesheet" href="style.css?v=20261026f">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" defer></script>
   <script src="data/projects.js?v=20261025a" defer></script>
-  <script src="graph.js?v=20261025a" defer></script>
+  <script src="graph.js?v=20261026a" defer></script>
 </head>
 <body>
   <main class="pg" id="project-graph" aria-label="Interactive project graph">
@@ -75,7 +75,6 @@
       </div>
 
       <aside id="pg-panel" class="pg-panel" aria-live="polite" hidden>
-        <div class="pg-panel-cover" id="pg-panel-cover" hidden></div>
         <div class="pg-panel-head">
           <span class="pg-panel-dot" id="pg-panel-dot"></span>
           <div class="pg-panel-titles">
@@ -87,6 +86,7 @@
           </button>
         </div>
         <div class="pg-panel-body">
+          <img class="pg-panel-cover" id="pg-panel-cover" alt="" decoding="async" hidden>
           <p class="pg-panel-desc" id="pg-panel-desc"></p>
           <a class="pg-open" id="pg-panel-open" target="_blank" rel="noopener" hidden>Open project <span aria-hidden="true">↗</span></a>
           <h3 class="pg-panel-label" id="pg-tech-label" hidden>Built with</h3>

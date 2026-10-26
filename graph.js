@@ -330,7 +330,7 @@
     if (n.type === 'project') {
       const p = n.data;
       el.cover.hidden = !p.image;
-      el.cover.style.backgroundImage = p.image ? `url("${p.image}")` : '';
+      if (p.image) el.cover.src = p.image; else el.cover.removeAttribute('src');
       el.meta.textContent = [p.year, p.section].filter(Boolean).join(' · ');
       el.desc.textContent = p.tagline;
       el.open.href = p.url; el.open.hidden = false;

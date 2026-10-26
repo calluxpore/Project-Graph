@@ -78,7 +78,7 @@ function mount({ stage, svg, read }, value) {
   const C = Cam(45, 0.5, 1.36);
   fit(C, [[-6, -6, -PB], [X1 + 6, Y1 + 6, -PB], [X1 + 6, -6, -PB], [-6, Y1 + 6, -PB], [M + CELL, M + CELL, BED + HMAX]], 200, 166);
   const P = proj(C), front = facing(C);
-  let R = value * CELL, over = null;
+  let R = value * CELL, over = null, pinned = null;
 
   // Back to front: the plinth, then each bed and its blocks diagonal by diagonal.
   const g = mk("g", {}, svg);
@@ -166,16 +166,19 @@ function mount({ stage, svg, read }, value) {
       const next = pick(p);
       if (next !== over) { over = next; retarget(); }
     },
-    leave: () => { over = null; retarget(); },
+    // Off the field, the rise returns to the pinned project (the host's pick), or to rest.
+    leave: () => { over = pinned; retarget(); },
   }));
   bag.add(() => svg.replaceChildren());
 
   return {
     set: (v) => { R = clamp(v, 0.5, 8) * CELL; retarget(); },
     destroy: bag.dispose,
-    // For a host page's search: the projects, and raising one as if the pointer were on it.
+    // For a host page: the projects, the one under the pointer, and pinning one so it
+    // stays raised and named after the pointer leaves (null unpins).
     projects: SECTIONS.flatMap(([, items], section) => items.map(([name, year]) => ({ name, year, section }))),
-    focus: (name) => { over = blocks.find((b) => b.name === name) || null; retarget(); },
+    current: () => (over ? over.name : null),
+    focus: (name) => { pinned = over = blocks.find((b) => b.name === name) || null; retarget(); },
   };
 }
 

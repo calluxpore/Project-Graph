@@ -184,7 +184,12 @@ h1, h2, h3, p, ol { margin: 0; }
 .pg-panel[hidden] { display: none; }
 @keyframes pg-in { from { opacity: 0; transform: translateX(12px); } to { opacity: 1; transform: none; } }
 
-.pg-panel-cover { aspect-ratio: 16 / 9; background: var(--code) center / cover no-repeat; border-bottom: 1px solid var(--border); flex: none; }
+/* The whole cover, never cropped: a rounded card across the panel body, inset from its edges, as tall as its shape needs. */
+.pg-panel-cover {
+  display: block; width: 100%; height: auto;
+  margin: .2rem 0 .9rem; border: 1px solid var(--border); border-radius: 10px;
+}
+.pg-panel-cover[hidden] { display: none; }
 .pg-panel-head { display: flex; align-items: flex-start; gap: .7rem; padding: .95rem .6rem .8rem 1rem; border-bottom: 1px solid var(--border); flex: none; }
 .pg-panel-dot { flex: none; width: 12px; height: 12px; margin-top: .4rem; border-radius: 50%; background: var(--node-color); box-shadow: 0 0 0 4px color-mix(in srgb, var(--node-color) 22%, transparent); }
 .pg-panel-titles { flex: 1; min-width: 0; }
